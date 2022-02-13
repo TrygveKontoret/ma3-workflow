@@ -1,0 +1,1 @@
+export const url = "https://strapi-ma3.herokuapp.com/api/caesars"
