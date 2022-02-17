@@ -11,16 +11,20 @@ function App() {
     axios.get(url).then((response) => setData(response.data.data));
   }, []);
 
+  console.log(data);
+
   return (
     <div className="App">
-      <h1>Hei</h1>
-      <ul>
         {data.length > 0
           ? data.map((keiser, idx) => {
-              return <li key={idx}>{keiser.attributes.Name}</li>;
+              return <div className='card' key={idx}>
+                <h2>{keiser.attributes.Name}</h2>
+                <img src={keiser.attributes.imgURL}></img>
+                <p>Date of birth: {keiser.attributes.Birth}</p>
+                <p>Date of death: {keiser.attributes.Death}</p>
+                </div>;
             })
           : null}
-      </ul>
     </div>
   );
 }
