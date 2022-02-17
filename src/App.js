@@ -13,19 +13,23 @@ function App() {
 
   console.log(data);
 
-  return (
+  return (<>
+    <h1>Roman emperors</h1>
     <div className="App">
         {data.length > 0
           ? data.map((keiser, idx) => {
               return <div className='card' key={idx}>
                 <h2>{keiser.attributes.Name}</h2>
-                <img src={keiser.attributes.imgURL}></img>
+                <div className='imgCont'> 
+                  <img src={keiser.attributes.imgURL}></img>
+                </div>
                 <p>Date of birth: {keiser.attributes.Birth}</p>
                 <p>Date of death: {keiser.attributes.Death}</p>
                 </div>;
             })
           : null}
     </div>
+    </>
   );
 }
 
